@@ -204,7 +204,7 @@ function calc(){
 
   document.getElementById('packRange').textContent = low + '–' + high + ' packs';
   document.getElementById('reasonLine').textContent =
-    'Driven by ' + labelService(service) + ' · ' + size + 'x density · ' + colors + '-color mix';
+    'Driven by ' + labelService(service) + ' · ' + density + 'x density · ' + colors + '-color mix';
 
   const conf = Math.min(92, 58 + density * 3 + (calibration !== 1.0 ? 10 : 0));
   document.getElementById('confPct').textContent = conf + '%';
