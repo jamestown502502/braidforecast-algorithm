@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BraidConsumption Engine — Algorithm Demo</title>
+<style>
+  :root{--accent:#e11d6f;--accent-dark:#b1155a;--bg:#fff8f5;--ink:#2a1620;--muted:#7a5f68;--border:#f1d9e0;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);padding:24px 16px 60px;}
+  .wrap{max-width:680px;margin:0 auto;}
+  h1{color:var(--accent-dark);font-size:1.4rem;margin-bottom:4px;}
+  p.lead{color:var(--muted);margin-top:0;}
+  .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;margin-bottom:16px;}
+  .io{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:start;}
+  .io .col h3{font-size:.8rem;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+  .io .arrow{font-size:1.4rem;color:var(--accent);align-self:center;}
+  ul{margin:0;padding-left:18px;font-size:.88rem;line-height:1.6;}
+  .output-box{background:#fdeef2;border-radius:12px;padding:12px 14px;font-size:.85rem;margin-bottom:8px;}
+  .output-box .why{color:var(--accent-dark);font-weight:600;font-size:.78rem;margin-top:4px;}
+  .notdo{background:#fff4e8;border:1px solid #f3d9b8;border-radius:12px;padding:14px 16px;font-size:.82rem;color:#7a5a2e;margin-top:16px;}
+  .notdo strong{display:block;margin-bottom:4px;color:#8a4a10;}
+  table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:10px;}
+  th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--border);}
+  footer{text-align:center;color:var(--muted);font-size:.75rem;margin-top:24px;}
+  a{color:var(--accent-dark);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>BraidConsumption Engine</h1>
+  <p class="lead">The transparent rules behind every BraidForecast prediction — no hidden weights.</p>
+
+  <div class="card">
+    <div class="io">
+      <div class="col">
+        <h3>Inputs</h3>
+        <ul>
+          <li>Service type</li>
+          <li>Braid size (1x–4x)</li>
+          <li>Length</li>
+          <li>Density (1–5)</li>
+          <li>Color mix</li>
+          <li>Brand &amp; pack size</li>
+          <li>Stylist calibration history</li>
+        </ul>
+      </div>
+      <div class="arrow">→</div>
+      <div class="col">
+        <h3>Outputs</h3>
+        <div class="output-box">
+          Packs needed: <strong>6–8</strong>
+          <div class="why">Why: knotless base × 3x density × medium length</div>
+        </div>
+        <div class="output-box">
+          Confidence: <strong>72%</strong>
+          <div class="why">Why: rises with density certainty and calibration history</div>
+        </div>
+        <div class="output-box">
+          Reserve list: <strong>per-color pack count</strong>
+          <div class="why">Why: total ÷ number of colors in the mix</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;font-size:.95rem;">The public formula</h3>
+    <table>
+      <tr><th>Step</th><th>Rule</th></tr>
+      <tr><td>Base packs</td><td>Knotless 6 · Box 5 · Feed-in 4 · Crochet 3 · Twists 4</td></tr>
+      <tr><td>Density multiplier</td><td>0.7 + (density × 0.15)</td></tr>
+      <tr><td>Length multiplier</td><td>Short 0.8 · Medium 1.0 · Waist 1.25 · Hip 1.45</td></tr>
+      <tr><td>Braid-size multiplier</td><td>1.3 − (size × 0.1) — smaller braids use more packs</td></tr>
+      <tr><td>Waste factor</td><td>+8% fixed</td></tr>
+      <tr><td>Calibration</td><td>Multiplier learned per-stylist from "actual packs used" feedback, stored locally on that stylist's device only</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;font-size:.95rem;">Confidence scoring</h3>
+    <p style="font-size:.85rem;">Confidence starts near 58–65% on the public formula alone and rises as a stylist enters real "actual packs used" feedback after appointments — each data point tightens the calibration multiplier for that stylist specifically.</p>
+  </div>
+
+  <div class="notdo">
+    <strong>What this does NOT do</strong>
+    It does not guarantee exact usage, does not replace a stylist's professional judgment, and is not yet validated against a large real-world dataset. Confidential per-stylist calibration weights and the underlying appointment dataset are not exposed publicly — only the rule structure above is.
+  </div>
+
+  <footer>
+    Bennett AI Solutions Inc. · <a href="index.html">← Back to the simulator</a>
+  </footer>
+</div>
+</body>
+</html>
